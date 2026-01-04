@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nim Game - AI vs You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Nim Game</h1>
+            <p class="subtitle">You vs AI</p>
+        </header>
+
+        <main>
+            <!-- Game Info Section -->
+            <section class="info-section">
+                <div class="turn-indicator" id="turnIndicator">
+                    <span class="pulse"></span>
+                    <span id="turnText">Loading...</span>
+                </div>
+                <div class="reserve-display">
+                    <h3>Reserve Pool</h3>
+                    <div class="reserve-count" id="reserveCount">-</div>
+                    <p class="small-text">stones remaining</p>
+                </div>
+            </section>
+
+            <!-- Piles Display -->
+            <section class="piles-section">
+                <h2>Stone Piles</h2>
+                <div class="piles-container" id="pilesContainer">
+                    <!-- Piles will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Player Input Section -->
+            <section class="input-section" id="inputSection">
+                <div class="input-group">
+                    <label for="pileSelect">Select Pile (1-3):</label>
+                    <select id="pileSelect">
+                        <option value="">Choose a pile...</option>
+                        <option value="0">Pile 1</option>
+                        <option value="1">Pile 2</option>
+                        <option value="2">Pile 3</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="removeCount">Remove (1-3 stones):</label>
+                    <div class="button-group">
+                        <button class="remove-btn" data-value="1">Remove 1</button>
+                        <button class="remove-btn" data-value="2">Remove 2</button>
+                        <button class="remove-btn" data-value="3">Remove 3</button>
+                    </div>
+                </div>
+
+                <button class="submit-btn" id="submitMove">Make Move</button>
+            </section>
+
+            <!-- Messages -->
+            <section class="message-section" id="messageSection">
+                <p id="message"></p>
+            </section>
+        </main>
+
+        <!-- Game Over Modal -->
+        <div class="modal" id="gameOverModal">
+            <div class="modal-content">
+                <h2 id="modalTitle"></h2>
+                <p id="modalMessage"></p>
+                <button class="play-again-btn" id="playAgainBtn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
